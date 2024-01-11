@@ -10,6 +10,7 @@ char *mystrcpy(char *desti,const char* src,size_t n)
        i++;
    }
 
+   if(i<n)
  desti[i]='\0';
    return desti;
 }
