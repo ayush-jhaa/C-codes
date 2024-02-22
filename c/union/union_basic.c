@@ -24,3 +24,28 @@ int main()
     printf("%d\n",&v.s2.i); // 636657680
     printf("%d\n",&v.s1.ch1);  // 636657680
 }
+
+// memory allocation in structure
+#include <stdio.h>
+
+union tag
+{
+    struct stu
+    {
+        char ch1[2];
+        char ch2[2];
+        char ch3[2];
+    }s1;
+    
+    struct stu2
+    {
+        int i;
+        short int j;
+    }s2;
+    
+}v={1,1,0,0,1,1};
+
+int main()
+{
+    printf("%d",v.s2.i); // 257
+}
