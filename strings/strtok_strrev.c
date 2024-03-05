@@ -2,7 +2,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-void strrev(char *p)
+void str_rev(char *p)
 {
     int l=strlen(p)-1;
     char *s=p;
@@ -33,53 +33,28 @@ int main()
     
     str[j-1]='\0';
     
-    int l=strlen(str);
-    
+    int l=strlen(str)-1;
 
-    char *s2=malloc(l+1);
+    // str_rev(str)  // if you want to reverse the main string without reversing substring
 
     char *p=strtok(str," ");
     int i;
 
     while(p !=NULL)
     {
-        strrev(p);
+        str_rev(p);
         p= strtok(NULL, " ");
     }
     
 
 
-    for( i=0;i<=l-1;i++)
+    for( i=0;i<=l;i++)
     {
        if(str[i]=='\0')
        {
-           s2[i]=' ';
-       }
-       
-       else
-       {
-           s2[i]=str[i];
+           str[i]=' ';
        }
     }
     s2[i]='\0';
-    
-    strcpy(str,s2);
-    
-    printf("%s\n",s2);
-    printf("%ld\n",strlen(s2));
-    printf("%ld\n",sizeof(s2));
-    
-    printf("------------------------------------------------------\n");
-    
-    printf("%s\n",str);
-    printf("%ld\n",strlen(str));
-     printf("%ld\n",sizeof(str));
-     
-     free(str);
-     free(s2);
-    
-     
-     str=NULL;
-     s2=NULL;
-     
+    printf("%s",str);
 }
